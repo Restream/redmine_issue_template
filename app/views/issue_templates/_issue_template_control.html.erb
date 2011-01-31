@@ -1,0 +1,18 @@
+<% html = capture do %>
+<div class='insertTemplate' style="margin-bottom: 15px; margin-left: -180px;">
+  <label style="margin-left: 0; margin-right: 5px;"><%= l(:label_issue_template_insert) %></label>
+  <select id="template_selector">
+    <%= issue_templates_options %>
+  </select>
+  <input type="button" value="Вставить" onclick="insertTemplate('template_selector', 'issue_description')"/>
+</div>
+<% end %>
+
+<% javascript_tag do %>
+  $('issue_description').insert({after: '<%= escape_javascript(html) %>'});
+  var head = $$('head')[0];
+  if (head) {
+    script = new Element('script', { type: 'text/javascript', src: '/plugin_assets/redmine_issue_template/javascripts/issue_templates.js'});
+    head.appendChild(script);
+  }
+<% end %>
