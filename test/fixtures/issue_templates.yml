@@ -1,0 +1,9 @@
+--- 
+issue_templates_001: 
+  title: Title
+  content: Content
+  id: 1
+issue_templates_002: 
+  title: Title2
+  content: Content2
+  id: 2

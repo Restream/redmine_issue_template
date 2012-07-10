@@ -4,4 +4,4 @@ ru:
   label_issue_template_new: Новый шаблон задачи
   label_issue_template_edit: Редактирование шаблона задачи
   label_issue_template_insert: Вставить шаблон
-
+  field_content: Содержимое
