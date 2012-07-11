@@ -8,7 +8,9 @@ Redmine::Plugin.register :redmine_issue_template do
   url 'http://undev.ru'
   author_url 'http://undev.ru'
 
-  icon = "/plugin_assets/redmine_issue_template/images/issue_templates.gif"
+  # Icon source: vendor/plugins/redmine_issue_template
+  # http://www.famfamfam.com/lab/icons/silk/
+  icon = "/plugin_assets/redmine_issue_template/images/page_white_paste.png"
   plugin_menu_html = {
     :style => "background-image: url(#{icon})"
   }
