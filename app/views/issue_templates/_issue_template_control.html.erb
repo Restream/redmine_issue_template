@@ -4,15 +4,14 @@
   <select id="template_selector">
     <%= issue_templates_options %>
   </select>
-  <input type="button" value="Вставить" onclick="insertTemplate('template_selector', 'issue_description')"/>
+  <input type="button" value="<%= l(:label_issue_template_insert) %>" onclick="insertTemplate('template_selector', 'issue_description')"/>
 </div>
 <% end %>
 
+<%= javascript_include_tag "issue_templates.js",
+    :plugin => 'redmine_issue_template'
+%>
+
 <% javascript_tag do %>
-  $('issue_description').insert({after: '<%= escape_javascript(html) %>'});
-  var head = $$('head')[0];
-  if (head) {
-    script = new Element('script', { type: 'text/javascript', src: '/plugin_assets/redmine_issue_template/javascripts/issue_templates.js'});
-    head.appendChild(script);
-  }
+  $('issue_description').insert({after: '<%= escape_javascript(html) %>'})
 <% end %>

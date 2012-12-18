@@ -1,8 +1,14 @@
 <h2><%= @issue_template.new_record? ? l(:label_issue_template_new) : l(:label_issue_template_edit) %></h2>
-<% form_for @issue_template, :builder => TabularFormBuilder, :html => {:class => "tabular"} do |f| %>
-  <p><%= f.text_field :title %></p>
-  <p><%= f.text_area :content %></p>
-  <p><%= submit_tag l(:button_save) %></p>
-
-  <%= javascript_tag "Form.Element.focus('issue_template_title');" %>
+<% labelled_form_for @issue_template do |f| %>
+  <%= error_messages_for @issue_template %>
+  <div class="box tabular">
+    <p>
+      <%= f.text_field :title %>
+    </p>
+    <p>
+      <%= f.text_area :content %>
+    </p>
+    <%= submit_tag l(:button_save) %>
+  </div>
+  <%= javascript_tag "Form.Element.focus('issue_template_title')" %>
 <% end %>
