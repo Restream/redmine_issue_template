@@ -25,6 +25,9 @@ class IssueTemplatesController < ApplicationController
     end
   end
 
+  def edit
+  end
+
   def update
     if @issue_template.update_attributes(params[:issue_template])
       redirect_to issue_templates_url
