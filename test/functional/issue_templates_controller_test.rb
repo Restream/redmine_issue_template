@@ -1,10 +1,14 @@
 require File.dirname(__FILE__) + '/../test_helper'
 
 class IssueTemplatesControllerTest < ActionController::TestCase
-  fixtures :issue_templates
+  fixtures :users, :issue_templates
 
   def setup
-    @request.session[:user_id] = 1 # admin permission
+    # admin
+    user = User.find(1)
+    User.current = user
+    session[:user_id] = user.id
+
     @some_template = IssueTemplate.first
 
     @new_template = {

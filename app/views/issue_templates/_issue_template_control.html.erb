@@ -4,7 +4,7 @@
   <select id="template_selector">
     <%= issue_templates_options %>
   </select>
-  <input type="button" value="<%= l(:label_issue_template_insert) %>" onclick="insertTemplate('template_selector', 'issue_description')"/>
+  <input type="button" value="<%= l(:label_issue_template_insert) %>" class="insert_template_button"/>
 </div>
 <% end %>
 
@@ -12,6 +12,8 @@
     :plugin => 'redmine_issue_template'
 %>
 
-<% javascript_tag do %>
-  $('issue_description').insert({after: '<%= escape_javascript(html) %>'})
+<%= javascript_tag do %>
+  jQuery(document).ready(function($) {
+    $('#issue_description').after('<%= escape_javascript(html) %>');
+  });
 <% end %>

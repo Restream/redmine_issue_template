@@ -1,5 +1,5 @@
 <h2><%= @issue_template.new_record? ? l(:label_issue_template_new) : l(:label_issue_template_edit) %></h2>
-<% labelled_form_for @issue_template do |f| %>
+<%= labelled_form_for @issue_template do |f| %>
   <%= error_messages_for @issue_template %>
   <div class="box tabular">
     <p>
@@ -10,5 +10,9 @@
     </p>
     <%= submit_tag l(:button_save) %>
   </div>
-  <%= javascript_tag "Form.Element.focus('issue_template_title')" %>
+  <%= javascript_tag do %>
+    jQuery(document).ready(function($){
+      $('#issue_template_title').focus();
+    });
+  <% end %>
 <% end %>

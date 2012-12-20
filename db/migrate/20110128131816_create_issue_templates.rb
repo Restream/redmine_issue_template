@@ -4,10 +4,10 @@ class CreateIssueTemplates < ActiveRecord::Migration
       t.string :title
       t.text :content
       t.timestamps
-    end
+    end unless table_exists? :issue_templates
   end
 
   def self.down
-    drop_table :issue_templates
+    drop_table :issue_templates if table_exists? :issue_templates
   end
 end

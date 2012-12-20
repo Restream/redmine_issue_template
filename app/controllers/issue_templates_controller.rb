@@ -3,11 +3,11 @@ class IssueTemplatesController < ApplicationController
   
   layout 'admin'
 
-  before_filter :find_issue_template, :except => [:index, :new, :create]
   before_filter :require_admin
+  before_filter :find_issue_template, :except => [:index, :new, :create]
 
   def index
-    @issue_templates = IssueTemplate.all(:order => "created_at DESC")
+    @issue_templates = IssueTemplate.order("created_at DESC")
   end
 
   def new

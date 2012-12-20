@@ -18,6 +18,8 @@ Redmine::Plugin.register :redmine_issue_template do
     :controller => 'issue_templates',
     :action => 'index'
   }, :html => plugin_menu_html)
+
+  requires_redmine :version_or_higher => '2.1.0'
 end
 
 ApplicationHelper.send(:include, IssueTemplatesHelper)
