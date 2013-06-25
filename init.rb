@@ -2,11 +2,11 @@ require 'redmine'
 
 Redmine::Plugin.register :redmine_issue_template do
   name 'Redmine Issue Template'
-  author 'undev.ru'
-  description 'Allows to manage templates of issues, and adding them to issue body'
-  version '0.0.3'
-  url 'http://undev.ru'
-  author_url 'http://undev.ru'
+  author 'Undev'
+  description 'Allows to manage templates of issues, and adding them to issue description'
+  version '1.0.0'
+  url 'https://github.com/Undev/redmine_issue_template'
+  author_url 'https://github.com/Undev'
 
   # Icon source: vendor/plugins/redmine_issue_template
   # http://www.famfamfam.com/lab/icons/silk/
