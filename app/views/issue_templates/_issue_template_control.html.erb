@@ -8,10 +8,6 @@
 </div>
 <% end %>
 
-<%= javascript_include_tag "issue_templates.js",
-    :plugin => 'redmine_issue_template'
-%>
-
 <%= javascript_tag do %>
   jQuery(document).ready(function($) {
     $('#issue_description').after('<%= escape_javascript(html) %>');
