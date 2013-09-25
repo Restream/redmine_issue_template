@@ -10,6 +10,6 @@
 
 <%= javascript_tag do %>
   jQuery(document).ready(function($) {
-    $('#issue_description_and_toolbar').after('<%= escape_javascript(html) %>');
+    $('#issue_description_and_toolbar').append('<%= escape_javascript(html) %>');
   });
 <% end %>
