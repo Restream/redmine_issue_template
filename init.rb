@@ -22,5 +22,4 @@ Redmine::Plugin.register :redmine_issue_template do
   requires_redmine :version_or_higher => '2.1.0'
 end
 
-ApplicationHelper.send(:include, IssueTemplatesHelper)
-require 'redmine_issue_template/hooks/view_issues_form_details_bottom_hook'
+require 'redmine_issue_template'
