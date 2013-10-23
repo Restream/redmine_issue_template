@@ -12,6 +12,7 @@
       <th><%=l(:field_title)%></th>
       <th><%= l(:field_content) %></th>
       <th></th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -19,6 +20,13 @@
   <tr class="<%= cycle('odd', 'even') %>">
     <td><%= link_to h(issue_template.title), {:action => :edit, :id => issue_template.id} %></td>
     <td><%= simple_format h(issue_template.content) %></td>
+    <td class="buttons">
+      <%= reorder_links('global_issue_template', {
+          :controller => 'global_issue_templates',
+          :action => 'update',
+          :id => issue_template.id
+      }, :put) %>
+    </td>
     <td>
      <%= link_to(l(:button_delete), { :action => 'destroy', :id => issue_template },
     															 :method => :delete,
