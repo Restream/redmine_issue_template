@@ -1,6 +1,6 @@
 require File.dirname(__FILE__) + '/../test_helper'
 
-class IssueTemplatesControllerTest < ActionController::TestCase
+class GlobalIssueTemplatesControllerTest < ActionController::TestCase
   fixtures :users
 
   def setup
@@ -9,14 +9,14 @@ class IssueTemplatesControllerTest < ActionController::TestCase
     User.current = user
     session[:user_id] = user.id
 
-    @some_template = IssueTemplate.create!(
+    @some_template = GlobalIssueTemplate.create!(
         :title => 'Title',
         :content => 'Content'
     )
 
     @new_template = {
-      :title => "new title",
-      :content => "new content"
+      :title => 'new title',
+      :content => 'new content'
     }
   end
 
@@ -26,12 +26,13 @@ class IssueTemplatesControllerTest < ActionController::TestCase
   end
 
   def test_should_post_create
-    post :create, :issue_template => @new_template
-    assert IssueTemplate.find_by_title(@new_template[:title])
+    post :create, :global_issue_template => @new_template
+    assert GlobalIssueTemplate.find_by_title(@new_template[:title])
     assert_response :redirect
   end
 
   def test_should_get_index
+    get :index
     assert_response :success
   end
 
@@ -41,7 +42,7 @@ class IssueTemplatesControllerTest < ActionController::TestCase
   end
 
   def test_should_put_update
-    put :update, :id => @some_template.id, :issue_template => @new_template
+    put :update, :id => @some_template.id, :global_issue_template => @new_template
     @some_template.reload
     assert_equal @some_template.title, @new_template[:title]
     assert_response :redirect
@@ -50,6 +51,6 @@ class IssueTemplatesControllerTest < ActionController::TestCase
   def test_should_delete_destroy
     delete :destroy, :id => @some_template.id
     assert_response :redirect
-    assert_nil IssueTemplate.find_by_title(@some_template.title)
+    assert_nil GlobalIssueTemplate.find_by_title(@some_template.title)
   end
 end

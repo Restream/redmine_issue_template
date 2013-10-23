@@ -17,7 +17,7 @@ Redmine::Plugin.register :redmine_issue_template do
     :style => "background-image: url(#{icon})"
   }
   menu(:admin_menu, :issue_templates, {
-    :controller => 'issue_templates',
+    :controller => 'global_issue_templates',
     :action => 'index'
   }, :html => plugin_menu_html)
 

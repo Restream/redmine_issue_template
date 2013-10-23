@@ -1,6 +1,8 @@
-<h2><%= @issue_template.new_record? ? l(:label_issue_template_new) : l(:label_issue_template_edit) %></h2>
-<%= labelled_form_for @issue_template do |f| %>
-  <%= error_messages_for @issue_template %>
+<h2><%= @global_issue_template.new_record? ?
+            l(:label_issue_template_new) :
+            l(:label_issue_template_edit) %></h2>
+<%= labelled_form_for @global_issue_template do |f| %>
+  <%= error_messages_for @global_issue_template %>
   <div class="box tabular">
     <p>
       <%= f.text_field :title %>

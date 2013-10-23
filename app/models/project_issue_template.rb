@@ -1,5 +1,7 @@
-class ProjectIssueTemplate < IssueTemplateBase
-  belongs_to :project
+class ProjectIssueTemplate < IssueTemplate
+  acts_as_list :scope => :project_id
 
   validates :project, :presence => true
+
+  belongs_to :project
 end

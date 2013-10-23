@@ -1,0 +1,16 @@
+tr.issue-templates-header {
+  border-top-style: solid;
+  border-top-width: 1px;
+  background-color: #FEFEFE;
+}
+
+tr.issue-templates-divider {
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+}
+
+tr.issue-templates-divider td {
+  height: 1em;
+}

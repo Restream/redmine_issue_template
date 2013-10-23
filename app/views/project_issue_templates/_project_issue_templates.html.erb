@@ -1,0 +1,36 @@
+<%= render :partial => 'project_issue_templates/header' %>
+<% project_templates.each do |project_template| %>
+  <tr>
+    <td><%= project_template.title %></td>
+    <td><%= project_template.content %></td>
+    <td class="buttons">
+      <%= reorder_links('project_issue_template', {
+          :controller => 'project_issue_templates',
+          :action => 'update',
+          :project_id => @project.id,
+          :id => project_template.id
+      }, :put) %>
+    </td>
+    <td class="buttons">
+      <%= link_to_if_authorized l(:button_edit),
+                                {
+                                    :controller => 'project_issue_templates',
+                                    :action => 'edit',
+                                    :project_id => @project.id,
+                                    :id => project_template.id
+                                },
+                                :class => 'icon icon-edit' %>
+
+      <%= link_to_if_authorized l(:button_delete),
+                                {
+                                    :controller => 'project_issue_templates',
+                                    :action => 'destroy',
+                                    :project_id => @project.id,
+                                    :id => project_template.id
+                                },
+                                :method  => :delete,
+                                :confirm => l(:text_are_you_sure),
+                                :class   => 'icon icon-del' %>
+    </td>
+  </tr>
+<% end %>

@@ -1,9 +1,11 @@
 <div class="contextual">
-<%= link_to l(:label_issue_template_new), {:action => 'new'}, :class => 'icon icon-add' %>
+<%= link_to l(:label_issue_template_new),
+            {:action => 'new'},
+            :class => 'icon icon-add' %>
 </div>
 
-<h2><%=l(:label_issue_template_plural)%></h2>
- 
+<h2><%=l(:label_global_issue_templates)%></h2>
+
 <table class="list">
   <thead>
     <tr>
@@ -13,15 +15,15 @@
     </tr>
   </thead>
   <tbody>
-<% @issue_templates.each do |issue_template| %>
-  <tr class="<%= cycle("odd", "even") %>">
+<% @global_issue_templates.each do |issue_template| %>
+  <tr class="<%= cycle('odd', 'even') %>">
     <td><%= link_to h(issue_template.title), {:action => :edit, :id => issue_template.id} %></td>
     <td><%= simple_format h(issue_template.content) %></td>
     <td>
      <%= link_to(l(:button_delete), { :action => 'destroy', :id => issue_template },
     															 :method => :delete,
     															 :confirm => l(:text_are_you_sure),
-    															 :class => 'icon icon-del') %>     
+    															 :class => 'icon icon-del') %>
     </td>
   </tr>
 <% end %>

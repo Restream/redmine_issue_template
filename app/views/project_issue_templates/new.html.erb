@@ -1,0 +1,4 @@
+<h2><%= l(:label_issue_template_new) %></h2>
+<%= render 'form',
+           :project_issue_template => @project_issue_template,
+           :url => project_issue_templates_path(@project.id) %>
