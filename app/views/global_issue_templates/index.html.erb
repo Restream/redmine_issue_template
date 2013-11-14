@@ -6,7 +6,7 @@
 
 <h2><%=l(:label_global_issue_templates)%></h2>
 
-<table class="list">
+<table class="list issue-templates">
   <thead>
     <tr>
       <th><%=l(:field_title)%></th>
@@ -18,9 +18,9 @@
   <tbody>
 <% @global_issue_templates.each do |issue_template| %>
   <tr class="<%= cycle('odd', 'even') %>">
-    <td><%= link_to h(issue_template.title),
+    <td class="issue-templates-title"><%= link_to h(issue_template.title),
                     { :action => :edit, :id => issue_template.id } %></td>
-    <td><%= simple_format h(issue_template.content) %></td>
+    <td class="issue-templates-content"><div><%= simple_format h(issue_template.content) %></div></td>
     <td class="buttons">
       <%= reorder_links('global_issue_template', {
           :controller => 'global_issue_templates',

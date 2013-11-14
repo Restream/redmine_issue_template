@@ -1,9 +1,9 @@
 <%= render :partial => 'project_issue_templates/header' %>
 <% global_templates.each do |global_template| %>
-  <tr>
-    <td><%= global_template.title %></td>
-    <td><%= global_template.content %></td>
-    <td></td>
-    <td></td>
+  <tr class="<%= cycle('odd', 'even') %>">
+    <td class="issue-templates-title"><%= global_template.title %></td>
+    <td class="issue-templates-content"><div><%= simple_format h(global_template.content) %></div></td>
+    <td class="buttons"></td>
+    <td class="buttons"></td>
   </tr>
 <% end %>

@@ -14,3 +14,11 @@ tr.issue-templates-divider {
 tr.issue-templates-divider td {
   height: 1em;
 }
+
+td.issue-templates-title {
+  width: 20%;
+}
+
+table.issue-templates td.buttons {
+  width: 5%;
+}

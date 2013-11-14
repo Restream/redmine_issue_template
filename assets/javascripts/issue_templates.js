@@ -38,4 +38,32 @@ jQuery(document).ready(function($){
     insertAtCursor('issue_description', value);
     return false;
   });
+
+  // Show/Collapse long issue content
+  $('td.issue-templates-content > div').each(function () {
+    var maxHeight = 100;
+    var showText = "[+]";
+    var hideText = "[-]";
+    var text = $(this);
+    if (text.height() > maxHeight || text.height() == 0){
+      text.css({ 'overflow': 'hidden','max-height': maxHeight + 'px' });
+
+      var link = $('<a href="#">' + showText + '</a>');
+      var linkDiv = $('<div></div>');
+      linkDiv.append(link);
+      $(this).after(linkDiv);
+
+      link.click(function (event) {
+        event.preventDefault();
+        if (text.css('max-height') == 'none') {
+          $(this).html(showText);
+          text.css('max-height', maxHeight + 'px');
+        } else {
+          $(this).html(hideText);
+          text.css('max-height', 'none');
+        }
+      });
+    }
+  });
+
 });
