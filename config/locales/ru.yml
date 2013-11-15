@@ -3,6 +3,7 @@ ru:
   label_global_issue_template: Глобальные шаблон задач
   label_project_issue_templates: Шаблоны задач проекта
   label_project_issue_template: Шаблон задач проекта
+  label_issue_templates: Шаблоны задач
   label_issue_template_new: Новый шаблон задачи
   label_issue_template_edit: Редактирование шаблона задачи
   label_issue_template_insert: Вставить шаблон

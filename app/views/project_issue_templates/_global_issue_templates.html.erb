@@ -2,8 +2,6 @@
 <% global_templates.each do |global_template| %>
   <tr class="<%= cycle('odd', 'even') %>">
     <td class="issue-templates-title"><%= global_template.title %></td>
-    <td class="issue-templates-content"><div><%= simple_format h(global_template.content) %></div></td>
-    <td class="buttons"></td>
-    <td class="buttons"></td>
+    <td colspan="3" class="issue-templates-content"><div><%= simple_format h(global_template.content) %></div></td>
   </tr>
 <% end %>

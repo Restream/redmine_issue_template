@@ -9,9 +9,11 @@
       </tr>
       <%= render :partial => 'project_issue_templates/global_issue_templates',
                  :locals => { :global_templates => GlobalIssueTemplate.by_position } %>
-      <tr class="issue-templates-divider">
-        <td colspan="4"></td>
-      </tr>
+      <% if @project.issue_templates.any? %>
+        <tr class="issue-templates-divider">
+          <td colspan="4"></td>
+        </tr>
+      <% end %>
     <% end %>
 
     <% if @project.issue_templates.any? %>

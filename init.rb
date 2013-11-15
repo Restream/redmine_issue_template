@@ -4,7 +4,7 @@ Redmine::Plugin.register :redmine_issue_template do
   name 'Redmine Issue Template'
   author 'Undev'
   description 'Allows to manage templates of issues, and adding them to issue description'
-  version '1.0.4'
+  version '1.0.5'
   url 'https://github.com/Undev/redmine_issue_template'
   author_url 'https://github.com/Undev'
 

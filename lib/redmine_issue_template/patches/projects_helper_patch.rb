@@ -15,7 +15,7 @@ module RedmineIssueTemplate::Patches::ProjectsHelperPatch
           :controller => 'project_issue_templates',
           :action     => :manage_project_issue_templates,
           :partial    => 'project_issue_templates/index',
-          :label      => :label_project_issue_templates
+          :label      => :label_issue_templates
       }
     end
 

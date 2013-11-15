@@ -3,6 +3,7 @@ en:
   label_global_issue_template: Global issue template
   label_project_issue_templates: Project issue templates
   label_project_issue_template: Project issue template
+  label_issue_templates: Issue templates
   label_issue_template_new: New issue template
   label_issue_template_edit: Edit issue template
   label_issue_template_insert: Insert template
