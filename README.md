@@ -1,4 +1,4 @@
-# Redmine Issue Template
+# Redmine Issue Template Plugin
 
 [![Build Status](https://travis-ci.org/Undev/redmine_issue_template.png?branch=master)](https://travis-ci.org/Undev/redmine_issue_template)
 [![Code Climate](https://codeclimate.com/github/Undev/redmine_issue_template.png)](https://codeclimate.com/github/Undev/redmine_issue_template)
