@@ -55,7 +55,7 @@ Now you should be able to see the plugin in **Administration > Plugins**.
   ![edit issue template](issue_template_6.PNG)
   Note that **Issue templates** tab displays both global and project templates.
 5. To edit or delete the global issue template, go to **Administration > Issue templates**.  
-![create global template](global_issue_template_4.PNG)
+![create global template](global_issue_template_4.png)
 
 
 ## License
