@@ -34,8 +34,8 @@ Now you should be able to see the plugin in **Administration > Plugins**.
 
 1. To create a global issue template
     1. Go to **Administration > Issue templates** and click **New issue template**.  
-      ![create global template](global_issue_template_1.PNG)  
-      ![create global template](global_issue_template_2.PNG)
+      ![create global template](global_issue_template_1.png)  
+      ![create global template](global_issue_template_2.png)
     2. Add the template title and content and click **Save**.  
     ![create global template](global_issue_template_3.PNG)
 2. To add an issue template for a specific project
