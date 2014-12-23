@@ -22,11 +22,16 @@ This plugin enables you to create global Redmine issue templates or templates fo
 
             git clone https://github.com/Undev/redmine_issue_template.git plugins/redmine_issue_template
 
-2. This plugin requires a migration. Run the following command to upgrade your database (make a database backup before):  
+2. Update the Gemfile.lock file by running the following commands:  
+
+         rm Gemfile.lock  
+         bundle install
+
+3. This plugin requires a migration. Run the following command to upgrade your database (make a database backup before):  
 
         rake redmine:plugins:migrate RAILS_ENV=production
 
-3. Restart Redmine.
+4. Restart Redmine.
 
 Now you should be able to see the plugin in **Administration > Plugins**.
 
