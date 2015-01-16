@@ -29,7 +29,7 @@ This plugin enables you to create global Redmine issue templates or templates fo
 
 3. This plugin requires a migration. Run the following command to upgrade your database (make a database backup before):  
 
-        rake redmine:plugins:migrate RAILS_ENV=production
+        bundle exec rake redmine:plugins:migrate RAILS_ENV=production
 
 4. Restart Redmine.
 
