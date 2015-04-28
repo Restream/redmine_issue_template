@@ -65,6 +65,9 @@ Now you should be able to see the plugin in **Administration > Plugins**.
 5. To edit or delete the global issue template, go to **Administration > Issue templates**.  
 ![create global template](global_issue_template_4.png)
 
+## Maintainers
+
+Danil Tashkinov, [github.com/nodecarter](https://github.com/nodecarter)
 
 ## License
 
