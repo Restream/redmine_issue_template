@@ -1,7 +1,7 @@
 # Redmine Issue Template Plugin
 
-[![Build Status](https://travis-ci.org/Restream/redmine_issue_template.png?branch=master)](https://travis-ci.org/Restream/redmine_issue_template)
-[![Code Climate](https://codeclimate.com/github/Restream/redmine_issue_template.png)](https://codeclimate.com/github/Restream/redmine_issue_template)
+[![Build Status](https://travis-ci.org/Restream/redmine_issue_template.svg?branch=master)](https://travis-ci.org/Restream/redmine_issue_template)
+[![Code Climate](https://codeclimate.com/github/Restream/redmine_issue_template/badges/gpa.svg)](https://codeclimate.com/github/Restream/redmine_issue_template)
 
 This plugin enables you to create global Redmine issue templates or templates for specific Redmine projects.
 
