@@ -4,7 +4,7 @@ module RedmineIssueTemplate::Patches::ProjectPatch
   extend ActiveSupport::Concern
 
   included do
-    has_many :issue_templates, :class_name => 'ProjectIssueTemplate'
+    has_many :issue_templates, class_name: 'ProjectIssueTemplate'
   end
 end
 

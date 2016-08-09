@@ -12,7 +12,7 @@ class GlobalIssueTemplatesController < ApplicationController
 
   def new
     @global_issue_template = GlobalIssueTemplate.new
-    render :action => :edit
+    render action: :edit
   end
 
   def create
@@ -21,7 +21,7 @@ class GlobalIssueTemplatesController < ApplicationController
     if @global_issue_template.save
       redirect_to global_issue_templates_url
     else
-      render :action => 'edit'
+      render action: 'edit'
     end
   end
 
@@ -34,7 +34,7 @@ class GlobalIssueTemplatesController < ApplicationController
     if @global_issue_template.update(issue_params)
       redirect_to global_issue_templates_url
     else
-      render :action => 'edit'
+      render action: 'edit'
     end
   end
 

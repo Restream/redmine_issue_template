@@ -1,52 +1,54 @@
 <div class="contextual">
-<%= link_to l(:label_issue_template_new),
-            {:action => 'new'},
-            :class => 'icon icon-add' %>
+  <%= link_to l(:label_issue_template_new),
+    { action: 'new' },
+    class: 'icon icon-add' %>
 </div>
 
-<h2><%=l(:label_global_issue_templates)%></h2>
+<h2><%= l(:label_global_issue_templates) %></h2>
 
 <table class="list issue-templates">
   <thead>
-    <tr>
-      <th><%=l(:field_title)%></th>
-      <th><%= l(:field_content) %></th>
-      <th></th>
-      <th></th>
-    </tr>
+  <tr>
+    <th><%= l(:field_title) %></th>
+    <th><%= l(:field_content) %></th>
+    <th></th>
+    <th></th>
+  </tr>
   </thead>
   <tbody>
-<% @global_issue_templates.each do |issue_template| %>
-  <tr class="<%= cycle('odd', 'even') %>">
-    <td class="issue-templates-title"><%= link_to h(issue_template.title),
-                    { :action => :edit, :id => issue_template.id } %></td>
-    <td class="issue-templates-content"><div><%= simple_format h(issue_template.content) %></div></td>
-    <td class="buttons">
-      <%= reorder_links('global_issue_template', {
-          :controller => 'global_issue_templates',
-          :action => 'update',
-          :id => issue_template.id
-      }, :put) %>
-    </td>
-    <td class="buttons">
-      <%= link_to l(:button_edit),
-                  {
-                      :controller => 'global_issue_templates',
-                      :action => 'edit',
-                      :id => issue_template.id
-                  },
-                  :class => 'icon icon-edit' %>
-      <%= link_to l(:button_delete),
-                  {
-                      :controller => 'global_issue_templates',
-                      :action => 'destroy',
-                      :id => issue_template.id
-                  },
-                  :method => :delete,
-                  :confirm => l(:text_are_you_sure),
-                  :class => 'icon icon-del' %>
-    </td>
-  </tr>
-<% end %>
+  <% @global_issue_templates.each do |issue_template| %>
+    <tr class="<%= cycle('odd', 'even') %>">
+      <td class="issue-templates-title"><%= link_to h(issue_template.title),
+        { action: :edit, id: issue_template.id } %></td>
+      <td class="issue-templates-content">
+        <div><%= simple_format h(issue_template.content) %></div>
+      </td>
+      <td class="buttons">
+        <%= reorder_links('global_issue_template', {
+          controller: 'global_issue_templates',
+          action:     'update',
+          id:         issue_template.id
+        }, :put) %>
+      </td>
+      <td class="buttons">
+        <%= link_to l(:button_edit),
+          {
+            controller: 'global_issue_templates',
+            action:     'edit',
+            id:         issue_template.id
+          },
+          class: 'icon icon-edit' %>
+        <%= link_to l(:button_delete),
+          {
+            controller: 'global_issue_templates',
+            action:     'destroy',
+            id:         issue_template.id
+          },
+          method:  :delete,
+          confirm: l(:text_are_you_sure),
+          class:   'icon icon-del' %>
+      </td>
+    </tr>
+  <% end %>
   </tbody>
 </table>

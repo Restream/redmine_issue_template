@@ -19,7 +19,7 @@ class ProjectIssueTemplatesController < ApplicationController
     if @project_issue_template.save
       redirect_to issue_templates_tab_url
     else
-      render :action => 'new'
+      render action: 'new'
     end
   end
 
@@ -32,7 +32,7 @@ class ProjectIssueTemplatesController < ApplicationController
     if @project_issue_template.update_attributes(issue_params)
       redirect_to issue_templates_tab_url
     else
-      render :action => 'edit'
+      render action: 'edit'
     end
   end
 
@@ -45,7 +45,7 @@ class ProjectIssueTemplatesController < ApplicationController
   private
 
   def issue_templates_tab_url
-    settings_project_url(:id => @project.id, :tab => :issue_templates)
+    settings_project_url(id: @project.id, tab: :issue_templates)
   end
 
   def issue_params

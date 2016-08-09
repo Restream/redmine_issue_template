@@ -1,5 +1,5 @@
 <%= error_messages_for project_issue_template %>
-<%= labelled_form_for project_issue_template, :url => url do |f| %>
+<%= labelled_form_for project_issue_template, url: url do |f| %>
   <div class="box tabular">
     <fieldset>
       <legend><%= l(:label_project_issue_template) %></legend>
@@ -11,7 +11,7 @@
       </p>
       <%= submit_tag l(:button_save) %>
       <%= link_to l(:button_cancel),
-                  settings_project_path(@project, :tab => 'issue_templates') %>
+                  settings_project_path(@project, tab: 'issue_templates') %>
     </fieldset>
   </div>
   <%= javascript_tag do %>

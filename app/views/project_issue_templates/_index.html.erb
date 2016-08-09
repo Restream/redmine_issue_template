@@ -7,8 +7,8 @@
       <tr class="issue-templates-header">
         <td colspan="4"><h3><%= l( :label_global_issue_templates ) %></h3></td>
       </tr>
-      <%= render :partial => 'project_issue_templates/global_issue_templates',
-                 :locals => { :global_templates => GlobalIssueTemplate.by_position } %>
+      <%= render partial: 'project_issue_templates/global_issue_templates',
+                 locals: { global_templates: GlobalIssueTemplate.by_position } %>
       <% if @project.issue_templates.any? %>
         <tr class="issue-templates-divider">
           <td colspan="4"></td>
@@ -20,8 +20,8 @@
       <tr class="issue-templates-header">
         <td colspan="4"><h3><%= l( :label_project_issue_templates ) %></h3></td>
       </tr>
-      <%= render :partial => 'project_issue_templates/project_issue_templates',
-                 :locals => { :project_templates => @project.issue_templates.by_position } %>
+      <%= render partial: 'project_issue_templates/project_issue_templates',
+                 locals: { project_templates: @project.issue_templates.by_position } %>
     <% end %>
 
     </tbody>
@@ -34,9 +34,9 @@
 <p>
   <%= link_to_if_authorized l( :label_issue_template_new ),
                             {
-                                :controller => 'project_issue_templates',
-                                :action => 'new',
-                                :project_id => @project.id
+                                controller: 'project_issue_templates',
+                                action: 'new',
+                                project_id: @project.id
                             },
-                            :class => 'icon icon-add' %>
+                            class: 'icon icon-add' %>
 </p>

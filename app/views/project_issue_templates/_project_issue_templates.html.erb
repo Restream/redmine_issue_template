@@ -1,44 +1,44 @@
-<%= render :partial => 'project_issue_templates/header' %>
+<%= render partial: 'project_issue_templates/header' %>
 <% project_templates.each do |project_template| %>
   <tr class="<%= cycle('odd', 'even') %>">
     <td class="issue-templates-title">
       <%= link_to_if_authorized h(project_template.title),
                                 {
-                                    :controller => 'project_issue_templates',
-                                    :action => 'edit',
-                                    :project_id => @project.id,
-                                    :id => project_template.id
+                                    controller: 'project_issue_templates',
+                                    action: 'edit',
+                                    project_id: @project.id,
+                                    id: project_template.id
                                 } %>
     </td>
     <td class="issue-templates-content"><div><%= simple_format h(project_template.content) %></div></td>
     <td class="buttons">
       <%= reorder_links('project_issue_template', {
-          :controller => 'project_issue_templates',
-          :action => 'update',
-          :project_id => @project.id,
-          :id => project_template.id
+          controller: 'project_issue_templates',
+          action: 'update',
+          project_id: @project.id,
+          id: project_template.id
       }, :put) %>
     </td>
     <td class="buttons">
       <%= link_to_if_authorized l(:button_edit),
                                 {
-                                    :controller => 'project_issue_templates',
-                                    :action => 'edit',
-                                    :project_id => @project.id,
-                                    :id => project_template.id
+                                    controller: 'project_issue_templates',
+                                    action: 'edit',
+                                    project_id: @project.id,
+                                    id: project_template.id
                                 },
-                                :class => 'icon icon-edit' %>
+                                class: 'icon icon-edit' %>
 
       <%= link_to_if_authorized l(:button_delete),
                                 {
-                                    :controller => 'project_issue_templates',
-                                    :action => 'destroy',
-                                    :project_id => @project.id,
-                                    :id => project_template.id
+                                    controller: 'project_issue_templates',
+                                    action: 'destroy',
+                                    project_id: @project.id,
+                                    id: project_template.id
                                 },
-                                :method  => :delete,
-                                :confirm => l(:text_are_you_sure),
-                                :class   => 'icon icon-del' %>
+                                method:  :delete,
+                                confirm: l(:text_are_you_sure),
+                                class:   'icon icon-del' %>
     </td>
   </tr>
 <% end %>
