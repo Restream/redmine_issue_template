@@ -16,7 +16,7 @@ class GlobalIssueTemplatesController < ApplicationController
   end
 
   def create
-    @global_issue_template = GlobalIssueTemplate.new(params[:global_issue_template])
+    @global_issue_template = GlobalIssueTemplate.new(issue_params)
 
     if @global_issue_template.save
       redirect_to global_issue_templates_url
@@ -31,7 +31,7 @@ class GlobalIssueTemplatesController < ApplicationController
 
   def update
     @global_issue_template = GlobalIssueTemplate.find(params[:id])
-    if @global_issue_template.update_attributes(params[:global_issue_template])
+    if @global_issue_template.update(issue_params)
       redirect_to global_issue_templates_url
     else
       render :action => 'edit'
@@ -44,5 +44,9 @@ class GlobalIssueTemplatesController < ApplicationController
     redirect_to global_issue_templates_url
   end
 
+  private
+  def issue_params
+    params.require(:global_issue_template).permit!
+  end
 end
 

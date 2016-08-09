@@ -14,7 +14,7 @@ class ProjectIssueTemplatesController < ApplicationController
   end
 
   def create
-    @project_issue_template = @project.issue_templates.build(params[:project_issue_template])
+    @project_issue_template = @project.issue_templates.build(issue_params)
 
     if @project_issue_template.save
       redirect_to issue_templates_tab_url
@@ -29,7 +29,7 @@ class ProjectIssueTemplatesController < ApplicationController
 
   def update
     @project_issue_template = @project.issue_templates.find(params[:id])
-    if @project_issue_template.update_attributes(params[:project_issue_template])
+    if @project_issue_template.update_attributes(issue_params)
       redirect_to issue_templates_tab_url
     else
       render :action => 'edit'
@@ -46,6 +46,10 @@ class ProjectIssueTemplatesController < ApplicationController
 
   def issue_templates_tab_url
     settings_project_url(:id => @project.id, :tab => :issue_templates)
+  end
+
+  def issue_params
+    params.require(:project_issue_template).permit!
   end
 end
 
