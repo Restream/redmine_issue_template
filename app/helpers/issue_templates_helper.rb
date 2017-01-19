@@ -1,6 +1,6 @@
 module IssueTemplatesHelper
   def issue_templates_options
-    if @project.module_enabled? :project_issue_templates
+    if @project && @project.module_enabled?(:project_issue_templates)
       project_and_glogal_issue_templates_options
     else
       global_issue_templates_options
